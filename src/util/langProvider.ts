@@ -174,6 +174,7 @@ export async function setLanguage(langCode: LangCode, callback?: NoneToVoidFunct
   }
 
   let newLangPack = await cacheApi.fetch(LANG_CACHE_NAME, langCode, cacheApi.Type.Json);
+
   if (!newLangPack) {
     if (withFallback) {
       await importFallbackLangPack();
@@ -192,6 +193,7 @@ export async function setLanguage(langCode: LangCode, callback?: NoneToVoidFunct
   document.documentElement.lang = langCode;
 
   const { languages, timeFormat } = getGlobal().settings.byKey;
+
   const langInfo = languages?.find((lang) => lang.langCode === langCode);
   translationFn = createLangFn();
   translationFn.isRtl = Boolean(langInfo?.rtl);
@@ -228,6 +230,7 @@ async function importFallbackLangPack() {
 
 async function fetchRemote(langCode: string): Promise<ApiLangPack | undefined> {
   const remote = await callApi('fetchLangPack', { sourceLangPacks: LANG_PACKS, langCode });
+
   if (remote) {
     await cacheApi.save(LANG_CACHE_NAME, langCode, remote.langPack);
     return remote.langPack;

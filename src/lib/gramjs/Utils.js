@@ -636,17 +636,17 @@ function isListLike(item) {
 /**
  * Returns the appropriate DC based on the id
  * @param dcId the id of the DC.
- * @param downloadDC whether to use -1 DCs or not
+ //* @param downloadDC whether to use -1 DCs or not
  * (These only support downloading/uploading and not creating a new AUTH key)
  * @return {{port: number, ipAddress: string, id: number}}
  */
-function getDC(dcId, downloadDC = false) {
+function getDC(dcId) {
     // TODO Move to external config
     switch (dcId) {
         case 1:
             return {
                 id: 1,
-                ipAddress: `web.teamgram.net`,
+                ipAddress: 'web.t.spacechat.org',
                 port: 443,
             };
         default:

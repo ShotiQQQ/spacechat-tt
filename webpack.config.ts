@@ -40,7 +40,7 @@ const {
 
 const CSP = `
   default-src 'self';
-  connect-src 'self' wss://*.web.teamgram.net blob: http: https: ${APP_ENV === 'development' ? 'wss:' : ''};
+  connect-src 'self' wss://*.web.t.spacechat.org blob: http: https: ${APP_ENV === 'development' ? 'wss:' : ''};
   script-src 'self' 'wasm-unsafe-eval' https://t.me/_websync_ https://telegram.me/_websync_;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https://ss3.4sqi.net/img/categories_v2/
@@ -181,9 +181,9 @@ export default function createConfig(
       )] : []),
       new HtmlWebpackPlugin({
         appTitle: APP_TITLE,
-        appleIcon: APP_ENV === 'production' ? 'apple-touch-icon' : 'apple-touch-icon-dev',
-        mainIcon: APP_ENV === 'production' ? 'icon-192x192' : 'icon-dev-192x192',
-        manifest: APP_ENV === 'production' ? 'site.webmanifest' : 'site_dev.webmanifest',
+        appleIcon: 'apple-touch-icon',
+        mainIcon: 'icon-192x192',
+        manifest: 'site.webmanifest',
         baseUrl: BASE_URL,
         csp: CSP,
         template: 'src/index.html',
