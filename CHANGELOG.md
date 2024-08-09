@@ -1,6 +1,6 @@
 ## 10.0.0 (2023-08-14)
 
-**Introducing Telegram Web A v10.0!**
+**Introducing SpaceChat Web A v10.0!**
 
 Today marks a special occasion. Telegram is celebrating its 10th anniversary! In honor of this milestone, and to highlight our web version's long-awaited parity with the native apps, we've leaped from version 1.x straight to 10.0. Big day!
 
