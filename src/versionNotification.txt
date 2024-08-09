@@ -1,9 +1,9 @@
-**Introducing Telegram Web A v10.0!**
+**Introducing SpaceChat Web A v10.0!**
 
-Today marks a special occasion. Telegram is celebrating its 10th anniversary! In honor of this milestone, and to highlight our web version's long-awaited parity with the native apps, we've leaped from version 1.x straight to 10.0. Big day!
+Today marks a special occasion. SpaceChat is celebrating its 10th anniversary! In honor of this milestone, and to highlight our web version's long-awaited parity with the native apps, we've leaped from version 1.x straight to 10.0. Big day!
 
-🌟 **Stories on Telegram**
-Introducing [Telegram Stories](https://t.me/durov/216) - share moments of your life, beyond just text.
+🌟 **Stories on SpaceChat**
+Introducing [SpaceChat Stories](https://t.me/durov/216) - share moments of your life, beyond just text.
 
 💻 **Desktop Version**
 An experimental standalone version is now available for enthusiasts and early adopters on all desktop platforms: **[web.t.spacechat.org/a/get](https://web.t.spacechat.org/a/get)**.
@@ -30,7 +30,7 @@ Web A now supports the latest from Emoji v15, so you can express yourself fully.
 Dynamic order for your sticker packs can be toggled on or off – whichever you prefer.
 
 🚀 **Performance Upgrades**
-We've implemented multiple memory and performance optimizations for a smoother, faster, more efficient Telegram experience.
+We've implemented multiple memory and performance optimizations for a smoother, faster, more efficient SpaceChat experience.
 
 🔧 **Fixes & Improvements**
 We've patched several problems, including issues with sending messages while uploading files, freezes while scrolling, and messages incorrectly marking as read with Web A in the background. See if you can spot the host of UI refinements we added as well.😉
