@@ -33,6 +33,7 @@ export async function fetch(
       : new Request(key.replace(/:/g, '_'));
     const cache = await cacheApi.open(cacheName);
     const response = await cache.match(request);
+
     if (!response) {
       return undefined;
     }
