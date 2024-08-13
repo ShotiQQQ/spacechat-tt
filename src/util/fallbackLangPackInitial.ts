@@ -4,7 +4,7 @@ import type { ApiLangPack } from '../api/types';
 
 export const fallbackLangPackInitial = {
   WrongNumber: 'Wrong number?',
-  SentAppCode: 'We\'ve sent the code to the **Telegram** app on your other device.',
+  SentAppCode: 'We\'ve sent the code to the **SpaceChat** app on your other device.',
   'Login.JustSentSms': 'We have sent you a code via SMS. Please enter it above.',
   'Login.Header.Password': 'Enter Password',
   'Login.EnterPasswordDescription': 'You have Two-Step Verification enabled, so your account is protected with an additional password.',
@@ -12,8 +12,8 @@ export const fallbackLangPackInitial = {
   'Login.PhonePlaceholder': 'Your phone number',
   'Login.Next': 'Next',
   'Login.QR.Login': 'Log in by QR Code',
-  'Login.QR.Title': 'Log in to Telegram by QR Code',
-  'Login.QR.Help1': 'Open Telegram on your phone',
+  'Login.QR.Title': 'Log in to SpaceChat by QR Code',
+  'Login.QR.Help1': 'Open SpaceChat on your phone',
   'Login.QR.Help2': 'Go to **Settings** > **Devices** > **Link Desktop Device**',
   'Login.QR2.Help2': 'Go to **Settings** → **Devices** → **Link Desktop Device**',
   'Login.QR.Help3': 'Point your phone at this screen to confirm login',
