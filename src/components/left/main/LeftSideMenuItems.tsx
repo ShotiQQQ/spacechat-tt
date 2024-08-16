@@ -9,11 +9,7 @@ import {
   ANIMATION_LEVEL_MIN,
   ARCHIVED_FOLDER_ID,
   BETA_CHANGELOG_URL,
-  FEEDBACK_URL,
   IS_BETA,
-  IS_TEST,
-  PRODUCTION_HOSTNAME,
-  WEB_VERSION_BASE,
 } from '../../../config';
 import {
   INITIAL_PERFORMANCE_STATE_MAX,
@@ -22,8 +18,6 @@ import {
 } from '../../../global/initialState';
 import { selectTabState, selectTheme } from '../../../global/selectors';
 import { getPromptInstall } from '../../../util/installPrompt';
-import { switchPermanentWebVersion } from '../../../util/permanentWebVersion';
-import { IS_ELECTRON } from '../../../util/windowEnvironment';
 
 import { useFolderManagerForUnreadCounters } from '../../../hooks/useFolderManager';
 import useLang from '../../../hooks/useLang';
@@ -66,16 +60,12 @@ const LeftSideMenuItems = ({
     openChat,
     setSettingOption,
     updatePerformanceSettings,
-    openChatByUsername,
-    openUrl,
     openChatWithInfo,
   } = getActions();
   const lang = useLang();
 
   const animationLevelValue = animationLevel !== ANIMATION_LEVEL_MIN
     ? (animationLevel === ANIMATION_LEVEL_MAX ? 'max' : 'mid') : 'min';
-
-  const withOtherVersions = !IS_ELECTRON && (window.location.hostname === PRODUCTION_HOSTNAME || IS_TEST);
 
   const archivedUnreadChatsCount = useFolderManagerForUnreadCounters()[ARCHIVED_FOLDER_ID]?.chatsCount || 0;
 
@@ -110,18 +100,6 @@ const LeftSideMenuItems = ({
 
   const handleChangelogClick = useLastCallback(() => {
     window.open(BETA_CHANGELOG_URL, '_blank', 'noopener');
-  });
-
-  const handleSwitchToWebK = useLastCallback(() => {
-    switchPermanentWebVersion('K');
-  });
-
-  const handleOpenTipsChat = useLastCallback(() => {
-    openChatByUsername({ username: lang('Settings.TipsUsername') });
-  });
-
-  const handleBugReportClick = useLastCallback(() => {
-    openUrl({ url: FEEDBACK_URL });
   });
 
   const handleOpenMyStories = useLastCallback(() => {
@@ -194,34 +172,12 @@ const LeftSideMenuItems = ({
         <span className="menu-item-name capitalize">{lang('Appearance.Animations').toLowerCase()}</span>
         <Toggle value={animationLevelValue} />
       </MenuItem>
-      <MenuItem
-        icon="help"
-        onClick={handleOpenTipsChat}
-      >
-        {lang('TelegramFeatures')}
-      </MenuItem>
-      <MenuItem
-        icon="bug"
-        onClick={handleBugReportClick}
-      >
-        Report Bug
-      </MenuItem>
       {IS_BETA && (
         <MenuItem
           icon="permissions"
           onClick={handleChangelogClick}
         >
           Beta Changelog
-        </MenuItem>
-      )}
-      {withOtherVersions && (
-        <MenuItem
-          icon="K"
-          isCharIcon
-          href={`${WEB_VERSION_BASE}k`}
-          onClick={handleSwitchToWebK}
-        >
-          Switch to K Version
         </MenuItem>
       )}
       {canInstall && (
