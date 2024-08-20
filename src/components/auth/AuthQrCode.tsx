@@ -11,7 +11,6 @@ import { DEFAULT_LANG_CODE, STRICTERDOM_ENABLED } from '../../config';
 import { disableStrict, enableStrict } from '../../lib/fasterdom/stricterdom';
 import buildClassName from '../../util/buildClassName';
 import { setLanguage } from '../../util/langProvider';
-import { LOCAL_TGS_URLS } from '../common/helpers/animatedAssets';
 import renderText from '../common/helpers/renderText';
 import { getSuggestedLanguage } from './helpers/getSuggestedLanguage';
 
@@ -21,7 +20,6 @@ import useLang from '../../hooks/useLang';
 import useLangString from '../../hooks/useLangString';
 import useMediaTransition from '../../hooks/useMediaTransition';
 
-import AnimatedIcon from '../common/AnimatedIcon';
 import Button from '../ui/Button';
 import Loading from '../ui/Loading';
 
@@ -33,7 +31,7 @@ type StateProps =
 
 const DATA_PREFIX = 'tg://login?token=';
 const QR_SIZE = 280;
-const QR_PLANE_SIZE = 54;
+// const QR_PLANE_SIZE = 54;
 const QR_CODE_MUTATION_DURATION = 50; // The library is asynchronous and we need to wait for its mutation code
 
 let qrCodeStylingPromise: Promise<typeof import('qr-code-styling')>;
@@ -164,13 +162,8 @@ const AuthCode: FC<StateProps> = ({
               ref={qrCodeRef}
               style={`width: ${QR_SIZE}px; height: ${QR_SIZE}px`}
             />
-            <AnimatedIcon
-              tgsUrl={LOCAL_TGS_URLS.QrPlane}
-              size={QR_PLANE_SIZE}
-              className="qr-plane"
-              nonInteractive
-              noLoop={false}
-            />
+
+            <div className="qr-plane" />
           </div>
           {!isQrMounted && <div className="qr-loading"><Loading /></div>}
         </div>
