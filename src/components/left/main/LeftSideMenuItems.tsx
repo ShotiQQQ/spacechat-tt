@@ -16,8 +16,7 @@ import {
   INITIAL_PERFORMANCE_STATE_MID,
   INITIAL_PERFORMANCE_STATE_MIN,
 } from '../../../global/initialState';
-import { selectTabState, selectTheme } from '../../../global/selectors';
-import { getPromptInstall } from '../../../util/installPrompt';
+import { selectTheme } from '../../../global/selectors';
 
 import { useFolderManagerForUnreadCounters } from '../../../hooks/useFolderManager';
 import useLang from '../../../hooks/useLang';
@@ -39,7 +38,6 @@ type OwnProps = {
 type StateProps = {
   animationLevel: AnimationLevel;
   theme: ThemeKey;
-  canInstall?: boolean;
   attachBots: GlobalState['attachMenu']['bots'];
 } & Pick<GlobalState, 'currentUserId' | 'archiveSettings'>;
 
@@ -48,7 +46,6 @@ const LeftSideMenuItems = ({
   archiveSettings,
   animationLevel,
   theme,
-  canInstall,
   attachBots,
   onSelectArchived,
   onSelectContacts,
@@ -180,21 +177,21 @@ const LeftSideMenuItems = ({
           Beta Changelog
         </MenuItem>
       )}
-      {canInstall && (
-        <MenuItem
-          icon="install"
-          onClick={getPromptInstall()}
-        >
-          Install App
-        </MenuItem>
-      )}
+      {/* {canInstall && ( */}
+      {/*   <MenuItem */}
+      {/*     icon="install" */}
+      {/*     onClick={getPromptInstall()} */}
+      {/*   > */}
+      {/*     Install App */}
+      {/*   </MenuItem> */}
+      {/* )} */}
     </>
   );
 };
 
 export default memo(withGlobal<OwnProps>(
   (global): StateProps => {
-    const tabState = selectTabState(global);
+    // const tabState = selectTabState(global);
     const {
       currentUserId, archiveSettings,
     } = global;
@@ -205,7 +202,7 @@ export default memo(withGlobal<OwnProps>(
       currentUserId,
       theme: selectTheme(global),
       animationLevel,
-      canInstall: Boolean(tabState.canInstall),
+      // canInstall: Boolean(tabState.canInstall),
       archiveSettings,
       attachBots,
     };
