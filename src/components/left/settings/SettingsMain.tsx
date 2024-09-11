@@ -13,7 +13,7 @@ import useLang from '../../../hooks/useLang';
 import useLastCallback from '../../../hooks/useLastCallback';
 
 import ChatExtra from '../../common/ChatExtra';
-import PremiumIcon from '../../common/PremiumIcon';
+// import PremiumIcon from '../../common/PremiumIcon';
 import ProfileInfo from '../../common/ProfileInfo';
 import ConfirmDialog from '../../ui/ConfirmDialog';
 import ListItem from '../../ui/ListItem';
@@ -36,11 +36,11 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
   onReset,
   currentUserId,
   sessionCount,
-  canBuyPremium,
+  // canBuyPremium,
 }) => {
   const {
     loadProfilePhotos,
-    openPremiumModal,
+    // openPremiumModal,
     openSupportChat,
     openUrl,
   } = getActions();
@@ -147,18 +147,18 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
           {lang('StickersName')}
         </ListItem>
       </div>
-      <div className="settings-main-menu">
-        {canBuyPremium && (
-          <ListItem
-            leftElement={<PremiumIcon className="icon" withGradient big />}
-            className="settings-main-menu-premium"
-            // eslint-disable-next-line react/jsx-no-bind
-            onClick={() => openPremiumModal()}
-          >
-            {lang('TelegramPremium')}
-          </ListItem>
-        )}
-      </div>
+      {/* <div className="settings-main-menu"> */}
+      {/*   {canBuyPremium && ( */}
+      {/*     <ListItem */}
+      {/*       leftElement={<PremiumIcon className="icon" withGradient big />} */}
+      {/*       className="settings-main-menu-premium" */}
+      {/*       // eslint-disable-next-line react/jsx-no-bind */}
+      {/*       onClick={() => openPremiumModal()} */}
+      {/*     > */}
+      {/*       {lang('TelegramPremium')} */}
+      {/*     </ListItem> */}
+      {/*   )} */}
+      {/* </div> */}
       <div className="settings-main-menu">
         <ListItem
           icon="ask-support"
