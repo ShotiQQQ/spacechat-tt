@@ -4,7 +4,7 @@ import { getActions, withGlobal } from '../../../global';
 
 import { SettingsScreens } from '../../../types';
 
-import { FAQ_URL, PRIVACY_URL } from '../../../config';
+// import { FAQ_URL, PRIVACY_URL } from '../../../config';
 import { selectIsPremiumPurchaseBlocked } from '../../../global/selectors';
 
 import useFlag from '../../../hooks/useFlag';
@@ -42,7 +42,7 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
     loadProfilePhotos,
     // openPremiumModal,
     openSupportChat,
-    openUrl,
+    // openUrl,
   } = getActions();
 
   const [isSupportDialogOpen,
@@ -161,28 +161,28 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
       {/*     </ListItem> */}
       {/*   )} */}
       {/* </div> */}
-      <div className="settings-main-menu">
-        {/* <ListItem */}
-        {/*   icon="ask-support" */}
-        {/*   onClick={openSupportDialog} */}
-        {/* > */}
-        {/*   {lang('AskAQuestion')} */}
-        {/* </ListItem> */}
-        <ListItem
-          icon="help"
-          // eslint-disable-next-line react/jsx-no-bind
-          onClick={() => openUrl({ url: FAQ_URL })}
-        >
-          {lang('TelegramFaq')}
-        </ListItem>
-        <ListItem
-          icon="privacy-policy"
-          // eslint-disable-next-line react/jsx-no-bind
-          onClick={() => openUrl({ url: PRIVACY_URL })}
-        >
-          {lang('PrivacyPolicy')}
-        </ListItem>
-      </div>
+      {/* <div className="settings-main-menu"> */}
+      {/*   <ListItem */}
+      {/*     icon="ask-support" */}
+      {/*     onClick={openSupportDialog} */}
+      {/*   > */}
+      {/*     {lang('AskAQuestion')} */}
+      {/*   </ListItem> */}
+      {/*   <ListItem */}
+      {/*     icon="help" */}
+      {/*     // eslint-disable-next-line react/jsx-no-bind */}
+      {/*     onClick={() => openUrl({ url: FAQ_URL })} */}
+      {/*   > */}
+      {/*     {lang('TelegramFaq')} */}
+      {/*   </ListItem> */}
+      {/*   <ListItem */}
+      {/*     icon="privacy-policy" */}
+      {/*     // eslint-disable-next-line react/jsx-no-bind */}
+      {/*     onClick={() => openUrl({ url: PRIVACY_URL })} */}
+      {/*   > */}
+      {/*     {lang('PrivacyPolicy')} */}
+      {/*   </ListItem> */}
+      {/* </div> */}
       <ConfirmDialog
         isOpen={isSupportDialogOpen}
         confirmLabel={lang('lng_settings_ask_ok')}
