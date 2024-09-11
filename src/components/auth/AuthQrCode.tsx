@@ -12,12 +12,12 @@ import { disableStrict, enableStrict } from '../../lib/fasterdom/stricterdom';
 import buildClassName from '../../util/buildClassName';
 import { setLanguage } from '../../util/langProvider';
 import renderText from '../common/helpers/renderText';
-import { getSuggestedLanguage } from './helpers/getSuggestedLanguage';
 
+// import { getSuggestedLanguage } from './helpers/getSuggestedLanguage';
 import useAsync from '../../hooks/useAsync';
 import useFlag from '../../hooks/useFlag';
 import useLang from '../../hooks/useLang';
-import useLangString from '../../hooks/useLangString';
+// import useLangString from '../../hooks/useLangString';
 import useMediaTransition from '../../hooks/useMediaTransition';
 
 import Button from '../ui/Button';
@@ -47,21 +47,21 @@ const AuthCode: FC<StateProps> = ({
   connectionState,
   authState,
   authQrCode,
-  language,
+  // language,
 }) => {
   const {
     returnToAuthPhoneNumber,
-    setSettingOption,
+    // setSettingOption,
   } = getActions();
 
-  const suggestedLanguage = getSuggestedLanguage();
+  // const suggestedLanguage = getSuggestedLanguage();
   const lang = useLang();
   // eslint-disable-next-line no-null/no-null
   const qrCodeRef = useRef<HTMLDivElement>(null);
 
   const isConnected = connectionState === 'connectionStateReady';
-  const continueText = useLangString(isConnected ? suggestedLanguage : undefined, 'ContinueOnThisLanguage', true);
-  const [isLoading, markIsLoading, unmarkIsLoading] = useFlag();
+  // const continueText = useLangString(isConnected ? suggestedLanguage : undefined, 'ContinueOnThisLanguage', true);
+  // const [isLoading, markIsLoading, unmarkIsLoading] = useFlag();
   const [isQrMounted, markQrMounted, unmarkQrMounted] = useFlag();
 
   const { result: qrCode } = useAsync(async () => {
@@ -132,15 +132,15 @@ const AuthCode: FC<StateProps> = ({
     }
   }, [isConnected]);
 
-  const handleLangChange = useCallback(() => {
-    markIsLoading();
-
-    void setLanguage(suggestedLanguage, () => {
-      unmarkIsLoading();
-
-      setSettingOption({ language: suggestedLanguage });
-    });
-  }, [markIsLoading, setSettingOption, suggestedLanguage, unmarkIsLoading]);
+  // const handleLangChange = useCallback(() => {
+  //   markIsLoading();
+  //
+  //   void setLanguage(suggestedLanguage, () => {
+  //     unmarkIsLoading();
+  //
+  //     setSettingOption({ language: suggestedLanguage });
+  //   });
+  // }, [markIsLoading, setSettingOption, suggestedLanguage, unmarkIsLoading]);
 
   const habdleReturnToAuthPhoneNumber = useCallback(() => {
     returnToAuthPhoneNumber();
@@ -176,9 +176,9 @@ const AuthCode: FC<StateProps> = ({
         {isAuthReady && (
           <Button isText onClick={habdleReturnToAuthPhoneNumber}>{lang('Login.QR.Cancel')}</Button>
         )}
-        {suggestedLanguage && suggestedLanguage !== language && continueText && (
-          <Button isText isLoading={isLoading} onClick={handleLangChange}>{continueText}</Button>
-        )}
+        {/* {suggestedLanguage && suggestedLanguage !== language && continueText && ( */}
+        {/*   <Button isText isLoading={isLoading} onClick={handleLangChange}>{continueText}</Button> */}
+        {/* )} */}
       </div>
     </div>
   );
