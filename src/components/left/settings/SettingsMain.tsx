@@ -45,7 +45,9 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
     openUrl,
   } = getActions();
 
-  const [isSupportDialogOpen, openSupportDialog, closeSupportDialog] = useFlag(false);
+  const [isSupportDialogOpen,
+    // openSupportDialog,
+    closeSupportDialog] = useFlag(false);
 
   const lang = useLang();
 
@@ -160,12 +162,12 @@ const SettingsMain: FC<OwnProps & StateProps> = ({
       {/*   )} */}
       {/* </div> */}
       <div className="settings-main-menu">
-        <ListItem
-          icon="ask-support"
-          onClick={openSupportDialog}
-        >
-          {lang('AskAQuestion')}
-        </ListItem>
+        {/* <ListItem */}
+        {/*   icon="ask-support" */}
+        {/*   onClick={openSupportDialog} */}
+        {/* > */}
+        {/*   {lang('AskAQuestion')} */}
+        {/* </ListItem> */}
         <ListItem
           icon="help"
           // eslint-disable-next-line react/jsx-no-bind
