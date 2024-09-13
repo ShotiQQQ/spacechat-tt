@@ -1,9 +1,9 @@
-productName: Telegram A
+productName: SpaceChat
 artifactName: ${productName}-${arch}.${ext}
 appId: org.telegram.TelegramA
 extraMetadata:
   main: ./dist/electron.js
-  productName: Telegram A
+  productName: SpaceChat
 files:
   - "dist"
   - "package.json"
@@ -44,7 +44,7 @@ mac:
   notarize:
     teamId: Y54Z4K69Z9
 dmg:
-  title: Telegram A installer
+  title: SpaceChat installer
   background: public/background-electron-dmg.tiff
   iconSize: 100
   contents:
