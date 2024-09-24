@@ -167,8 +167,6 @@ const SettingsEditProfile: FC<OwnProps & StateProps> = ({
     const trimmedLastName = lastName.trim();
     const trimmedBio = bio.trim();
 
-    if (!editableUsername) return;
-
     if (!trimmedFirstName.length) {
       setError(ERROR_FIRST_NAME_MISSING);
       return;
@@ -182,7 +180,7 @@ const SettingsEditProfile: FC<OwnProps & StateProps> = ({
         bio: trimmedBio,
       }),
       ...(isUsernameTouched && {
-        username: editableUsername,
+        username: editableUsername !== false ? editableUsername : undefined,
       }),
     });
   }, [
