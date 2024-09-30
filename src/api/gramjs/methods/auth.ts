@@ -16,6 +16,7 @@ const ApiErrors: { [k: string]: string } = {
   PASSWORD_HASH_INVALID: 'Incorrect password.',
   PHONE_PASSWORD_FLOOD: 'Limit exceeded. Please try again later.',
   PHONE_NUMBER_BANNED: 'This phone number is banned.',
+  PHONE_CODE_EXPIRED: 'SMS code has been expired. Please refresh page',
 };
 
 const authController: {
